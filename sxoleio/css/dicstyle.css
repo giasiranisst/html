@@ -7,7 +7,7 @@
 }
 
 body {
-    margin-top: 50px;
+    margin-top: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -24,7 +24,7 @@ body {
     padding: 2px 2px 20px 10px;
     min-width: min-content;
     min-height: min-content;
-    height: 43vh;
+    height: 92vh;
     display: flex;
     flex-direction: column;
 }
@@ -93,10 +93,16 @@ body {
         overflow: auto;
         overflow-x: hidden;
     }
-	    .container.active ul {
-        height: auto;
+
+    .container.active ul {
+        height: 70vh;
     }
 
+    img {
+        max-height: 45vh;
+
+        object-fit: contain;  
+    }
 }
 
 @media (max-width: 609px) {
@@ -106,25 +112,30 @@ body {
 
     .container {
         height: auto;
-        overflow-y: auto;
     }
 
     ul .content {
         max-height: 65vh;
         overflow: auto;
+        overflow-y: hidden;
     }
 
     .container.active ul {
-        height: 50vh;
+        height: 75vh;
+    }
+
+    img {
+        max-height: 100%;
+        max-width: 100%;
+        object-fit: contain; 
     }
 }
 
 @media (max-height: 400px) {
 	 #dropdownMenu{
-		max-height: 40px;
+		max-height: 50px;
 	}
 }
-
 
 /* Σβηνει την τελευταια γραμμη */
 ul li:last-child {
@@ -145,12 +156,12 @@ ul li:last-child {
 }
 
 .container li .details span {
-    font-size: 17px;
+    font-size: 15px;
     color: #7e7e7e;
 }
 
 select {
-	    appearance: none;
+    appearance: none;
     -webkit-appearance: none; /* Safari */
     -moz-appearance: none; /* Firefox */
     width: 100%;
@@ -166,4 +177,17 @@ select {
 select:focus {
     outline: none;
     border-color: #007bff;
+}
+
+.wimage {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    position: relative;
+    height: auto;
+    object-fit: contain;
+    margin: 0 auto;
 }

@@ -131,6 +131,12 @@ body {
     }
 }
 
+@media (max-height: 400px) {
+	 #dropdownMenu{
+		max-height: 40px;
+	}
+}
+
 /* Σβηνει την τελευταια γραμμη */
 ul li:last-child {
     margin-bottom: 0px;

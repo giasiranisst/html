@@ -148,7 +148,6 @@ select {
     -moz-appearance: none; /* Firefox */
     width: 100%;
     height: auto;
-    max-height: 10vh;
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ccc;

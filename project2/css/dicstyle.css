@@ -161,6 +161,9 @@ ul li:last-child {
 }
 
 select {
+    appearance: none;
+    -webkit-appearance: none; /* Safari */
+    -moz-appearance: none; /* Firefox */
     width: 100%;
     height: auto;
     max-height: 8vh;
@@ -169,6 +172,11 @@ select {
     border: 1px solid #ccc;
     border-radius: 5px;
     outline: none;
+}
+
+select:focus {
+    outline: none;
+    border-color: #007bff;
 }
 
 .wimage {

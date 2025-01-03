@@ -131,7 +131,7 @@ body {
     }
 }
 
-@media (max-height: 800px) {
+@media (max-height: 750px) {
 	 #dropdownMenu{
 		max-height: 50px;
 	}

@@ -50,6 +50,8 @@ body {
 }
 
 .container ul {
+        height: 0;
+    opacity: 0;
     flex-grow: 1;  /* Εξασφαλίζει ότι το ul θα καταλαμβάνει τον υπόλοιπο χώρο */
     overflow-y: auto; /* Επιτρέπει την κύλιση στο ul αν το περιεχόμενο υπερβεί το ύψος */
     transition: all 0.2s ease;

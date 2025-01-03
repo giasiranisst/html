@@ -147,7 +147,7 @@ select {
     -webkit-appearance: none; /* Safari */
     -moz-appearance: none; /* Firefox */
     width: 100%;
-    height: auto;
+    height: 40px;
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ccc;

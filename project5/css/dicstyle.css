@@ -1,3 +1,4 @@
+/* Import Google Font - Poppins */
 * {
     margin: 0 0 5px 0;
     padding: 0;
@@ -10,14 +11,14 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    max-height: 100vh;
+    max-height: 100vh; 
     min-height: 50vh;
     background: dodgerblue;
     overflow: auto;
 }
 
 .container {
-    width: 50vw;
+    width: 50vw;  
     background: white;
     border-radius: 7px;
     padding: 2px 2px 20px 10px;
@@ -92,6 +93,7 @@ body {
         overflow: auto;
         overflow-x: hidden;
     }
+
 }
 
 @media (max-width: 609px) {
@@ -114,12 +116,10 @@ body {
     }
 }
 
-@media (max-height: 400px) {
-    #dropdownMenu{
-       max-height: 50px;
-   }
-}
 
+
+
+/* Σβηνει την τελευταια γραμμη */
 ul li:last-child {
     margin-bottom: 0px;
     padding-bottom: 0px;
@@ -145,7 +145,7 @@ ul li:last-child {
 select {
     width: 100%;
     height: auto;
-    max-height: 8vh;
+    max-height: 10vh;
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
@@ -153,25 +153,3 @@ select {
     outline: none;
 }
 
-@media (orientation: landscape) {
-    .container {
-        height: 80vh; /* Προσαρμόζει το ύψος στο landscape mode */
-        width: 60vw; /* Μειώνει το πλάτος για να ταιριάζει καλύτερα */
-    }
-
-    /* Ρυθμίζει την περιοχή του header και search στο landscape */
-    .container header {
-        font-size: 5vw; /* Μικραίνει το μέγεθος του κειμένου για πιο ευανάγνωστο */
-        padding-top: 10px;
-    }
-
-    .container .search {
-        margin: 20px 0 15px;
-    }
-
-    /* Ρυθμίζει την εμφάνιση του περιεχομένου στο landscape */
-    ul .content {
-        max-height: 60vh;
-        overflow-y: auto;
-    }
-}

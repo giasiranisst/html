@@ -81,7 +81,7 @@ body {
     border-radius: 7px;
     padding: 2px 2px 20px 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-	overflow-y: hidden;
+	overflow-y: auto;
     word-wrap: break-word;  
     word-break: break-word;  
     overflow-wrap: break-word;  

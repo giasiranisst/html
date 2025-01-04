@@ -170,11 +170,6 @@ select:focus {
     border-color: #007bff;
 }
 
-@media (max-height: 400px) {
-	 #dropdownMenu{
-		max-height: 50px;
-	}
-}
 
 @media (max-width: 600px) {
 	
@@ -182,6 +177,7 @@ select:focus {
          max-height: 50%; 
         height: auto; 
         overflow: visible; 
+        margin-left: 20px;
     }
 	
 		 #dropdownMenu{

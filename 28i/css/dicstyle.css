@@ -182,7 +182,6 @@ select:focus {
          max-height: 50%; 
         height: auto; 
         overflow: visible; 
-        margin-left: 20px;
     }
 	
 		 #dropdownMenu{

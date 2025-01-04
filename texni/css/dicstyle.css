@@ -93,24 +93,26 @@ body {
         font-size: 28px;
     }
 
+    .container {
+        height: auto;
+        width: 90%;
+        display: flex;
+        justify-content: center;
+    }
+
     ul .content {
         overflow-y: auto;
         overflow-x: hidden;
     }
 
     .container.active ul {
-        height: 70vh;
-    }
-
-    img {
-        max-height: 45vh;
-        object-fit: contain;
+        height: auto;
     }
 }
 
 @media (max-width: 609px) {
     .container header {
-        font-size: 6vw;
+        font-size: 5vw;
     }
 
     .container {

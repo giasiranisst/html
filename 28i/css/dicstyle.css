@@ -74,12 +74,18 @@ body {
 }
 
 .container {
-    width: 80%;  
+    width: 75%;  
+    max-width: 600px;  
+    min-width: 300px;  
+    max-height: 91vh;  
     background: white;
     border-radius: 7px;
     padding: 2px 2px 20px 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 	overflow-y: auto;
+    word-wrap: break-word;  
+    word-break: break-word;  
+    overflow-wrap: break-word;  
 	
 }
 
@@ -185,7 +191,6 @@ select:focus {
          max-height: 50%; 
         height: auto; 
         overflow: visible; 
-        margin-left: 20px;
     }
 	
 		 #dropdownMenu{
@@ -199,9 +204,10 @@ select:focus {
 		font-size: 0.7em;
 }
 .container {
-	width: 60vw;
     padding: 0;
     height: 91vh;
+    width: 75%;  
+    max-width: 500px;  
 }
  .container header {
 		font-size: 1em;

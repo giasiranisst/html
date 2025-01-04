@@ -74,8 +74,7 @@ body {
 }
 
 .container {
-    width: 50vw;  
-    max-height: 92vh; 
+    width: 90%;  
     background: white;
     border-radius: 7px;
     padding: 2px 2px 20px 10px;
@@ -201,6 +200,8 @@ select:focus {
 }
 .container {
 	width: 60vw;
+    padding: 0;
+    height: 91vh;
 }
  .container header {
 		font-size: 1em;
@@ -214,3 +215,4 @@ select:focus {
  font-size:0.7em; }
  
 }
+

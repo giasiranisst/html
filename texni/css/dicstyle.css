@@ -26,12 +26,15 @@ body {
     display: flex;
     flex-direction: column;
     overflow-y: auto; 
+    justify-content: center;
+    height: auto;
 }
 
 .container header {
     font-weight: bolder;
     text-align: center;
     padding-top: 20px;
+    font-size: 28px;
 }
 
 .container .search {
@@ -88,11 +91,7 @@ body {
     justify-content: space-between;
 }
 
-@media (min-width: 610px) {
-    .container header {
-        font-size: 28px;
-    }
-
+@media (max-width: 700px) {
     .container {
         height: auto;
         width: 90%;
@@ -110,11 +109,22 @@ body {
     }
 }
 
-@media (max-width: 609px) {
+@media (min-width: 701px) {
     .container header {
-        font-size: 5vw;
+        font-size: 28px;
     }
 
+    ul .content {
+        overflow: auto;
+        overflow-x: hidden;
+    }
+	    .container.active ul {
+        height: auto;
+    }
+
+}
+
+@media (max-width: 609px) {
     .container {
         height: auto;
         width: 90%;

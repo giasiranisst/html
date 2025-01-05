@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Παραθετικά</title>
+  <script type="text/javascript" src="./js/mermaid.min.js"> </script>
+  <script type="text/javascript" src="./js/sweetalert2.all.min.js"> </script>
+  <link rel="stylesheet" href="./css/sweetalert2.min.css">
+  <link rel="stylesheet" href="./css/cmap.css">
+</head>
+<body>
+<br>
+<div class="what">
+  <p>Επιλέξτε το επίθετο για το οποίο θα δημιουργήσετε τον νοητικό του χάρτη με όλους τους τύπους των παραθετικών<br>
+  <select id="noun" onchange="showChart()">
+      <option>Επίλεξε επίθετο</option>
+      <option>απλός</option>
+      <option>γερός</option>
+      <option>κακός</option>
+      <option>καλός</option>
+      <option>κοντός</option>
+      <option>λίγος</option>
+      <option>μακρύς</option>
+  </select>
+</div>
+ <div> <button id="saveButton">Αποθήκευση ως εικόνα</button> <br></div> 
+  <div id="content">
+    <div class="mermaid-container">  
+  <div id="mermaid-chart" class="mermaid" style="max-width: 40%; margin:0 auto">
+    flowchart TD;
+    A((?))
+  </div>
+  </div>
+</div>
+<script type="text/javascript" src="./js/graph.js"> </script>
+<footer>
+  <a href="credits.htm">Συντελεστές ανάπτυξης</a>
+</footer>
+ </body>
+</html>

@@ -1,20 +1,31 @@
 #saveButton{
     display: block; 
     margin: auto;
-    color:red;
+    color:white;
     margin-top: 10px;
+    background-color: cadetblue;
+    padding: 5px;
+    border-radius: 5px;
+  }
+
+  .mermaid-container {
+    width: 100%;
+    height: 100%;
+    max-height: 100vh;
+    overflow: auto;
+    justify-content: center;
+    align-items: center;
+    position: relative;
   }
 
   svg {
-    max-height: auto !important;
-  
-    margin: 0 auto; /* poor attempt at centering */
-  
-    height: auto !important; /* overrides inline */
-    width: auto !important; /* overrides inline */
-  
-    max-width: 1000px !important;
+    max-height: 100% !important;
+    margin: 0 auto; 
+    height: auto !important; 
+    width: auto !important;
     display: block;
+
+    max-width: 70vw !important;
   }
 
   .what {

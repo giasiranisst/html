@@ -29,14 +29,15 @@
                 </div>
 
                 <div id="sentenceInput">
-                    <p>Τι θα γινόταν αν η Κοκκινοσκουφίτσα συναντούσε </p>
-                    <select>
-                        <option value="option">έναν</option>
-                        <option value="option">μια</option>
-                        <option value="option">ένα</option>
-                    </select>
-                    <input type="text" placeholder="___________________." autofocus size="20">;
-                </div>
+    <label for="sentenceSelect">Τι θα γινόταν αν η Κοκκινοσκουφίτσα συναντούσε </label>
+    <select id="sentenceSelect">
+        <option value="option">έναν</option>
+        <option value="option">μια</option>
+        <option value="option">ένα</option>
+    </select>
+    <label for="sentenceInputField" class="visually-hidden"></label>
+    <input id="sentenceInputField" type="text" placeholder="____________________" autofocus size="20">
+</div>
                 <button onclick="loadRandomImages()">Άλλη εικόνα...</button>
             </div>
             <footer>

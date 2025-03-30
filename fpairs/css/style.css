@@ -142,20 +142,18 @@ footer a:hover {
 }
 
 @media (max-height: 500px) and (orientation: landscape) {
-.container {
-height: 90vh;
-max-height: 100vh;
-overflow-y: auto;
-}
+    .container {
+        height: 100vh;
+        max-height: 100vh;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
 
-button {
-position: relative;
-bottom: 10px;
-}
-
-.txt {
-	font-size: 1.2em;
-}
-
-
+    h1 {
+        display: block !important;
+        font-size: 1.5em; /* Μικρότερη γραμματοσειρά αν χρειάζεται */
+        margin-top: 10px;
+    }
 }

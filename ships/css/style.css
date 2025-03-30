@@ -23,35 +23,38 @@ body {
     font-family: sans-serif;
     margin: 0;
 }
-
-
-
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
     width: 100%;
-
+	height:90vh;
+    padding-top: 10px;
+    overflow: hidden;
 }
 
 .title {
-    margin-top: 5px;
+    margin-bottom: 10px;
     color: #082b99;
-    width: 100%;
     text-align: center;
+    font-size: 1.3em;
+    width: 100%;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 5px;
+    grid-template-columns: repeat(3, 1fr); /* Πλέγμα 3x3 */
+    gap: 10px;
+    width: 90vw; /* 90% του πλάτους της οθόνης */
+    max-width: 550px;
 
-    max-width: 1000px;
+    overflow-y: auto;
 }
 
 .card {
-    width: calc(19vw - 100px);
-    aspect-ratio: 1/1;
+    width: 100%;
+    aspect-ratio: 1/1; /* Κρατάει τις κάρτες τετράγωνες */
     position: relative;
     perspective: 1000px;
     cursor: pointer;
@@ -60,7 +63,6 @@ body {
 .card-inner {
     width: 100%;
     height: 100%;
-    position: absolute;
     transform-style: preserve-3d;
     transition: transform 0.6s;
 }
@@ -92,43 +94,66 @@ body {
     transform: rotateY(180deg);
     text-align: center;
     padding: 10px;
-    font-size: 1.2em;
+    font-size: 1em;
+    word-wrap: break-word;
+    overflow: hidden;
 }
+
 
 .card-back span {
     font-weight: bold;
 }
 
-@media (max-width: 600px) {
-    .grid {
-        gap: 10px;
-    }
-    .card-back {
-        font-size: 1em;
-    }
-}
+
 
 footer {
-    position: fixed;  
+    position: fixed;
     bottom: 0;
     left: 0;
-    width: 100%;  
+    width: 100%;
     background: #f7f8f8;
     padding: 5px;
     font-size: 1em;
     border-top: 2px solid #ccc;
-    text-align: right;  
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); 
-    margin-bottom: 0; 
-  }
+    text-align: right;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0;
+    margin-top: 50px; /* Απόσταση από τις κάρτες */
+}
 
-
-  footer a {
+footer a {
     color: black;
-    text-decoration: none;  
+    text-decoration: none;
     padding-right: 35px;
-  }
-  
-  footer a:hover {
-    text-decoration: underline; 
-  }
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 900px) and (orientation: landscape) {
+    .container {
+        height: auto;
+        padding-top: 5px;
+        overflow-y: auto;
+    }
+
+    .grid {
+        grid-template-columns: repeat(3, 1fr); /* Διατηρείται το 3x3 */
+        gap: 10px;
+        max-width: 90vw; /* Περιορισμός για να χωράει το πλέγμα */
+        max-height: 70vh; /* Περιορισμός ύψους για τις κάρτες */
+    }
+
+    .title {
+        font-size: 1.2em;
+        margin-bottom: 5px;
+    }
+
+    .card {
+        width: 28vw; /* Κάνουμε τις κάρτες μικρότερες */
+        max-width: 150px; /* Περιορισμός μεγέθους καρτών */
+    }
+
+
+}

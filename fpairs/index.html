@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="el">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Φανταστικά ζευγάρια</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="ratio">
+        <div class="main-container">
+            <div class="container">
+                <h1>Φανταστικά ζευγάρια </h1>
+                <div class="txt">
+                    <p>Ανακάτεψε τις κάρτες, για να ταιριάξεις τυχαία κάθε ήρωα ή ηρωίδα με ένα αντικείμενο. </p>
+
+                    <p>Συμπλήρωσε όπως στο παράδειγμα: Ο <span>Σπάιντερμαν</span> <span class="has">έχει</span>
+                        <span>μια κιθάρα</span></p>
+                    <p>Συζητάμε μαζί στην τάξη την ορθογραφία των λέξεων.</p>
+                </div>
+                <div class="image-container">
+                    <div class="image-group" id="group1">
+                        <img id="image1" src="">
+                    </div>
+                    <div class="image-group" id="group2">
+                        <img id="image2" src="">
+                    </div>
+                </div>
+
+                <div id="sentenceInput">
+                    <p id="article"></p>
+                    <input type="text" placeholder="___________________________" autofocus size="20">
+                    <p id="verb"></p>
+                    <select>
+                        <option value="option">έναν</option>
+                        <option value="option">μια</option>
+                        <option value="option">ένα</option>
+                    </select>
+                    <input type="text" placeholder="___________________________" autofocus size="25">
+                </div>
+
+                <br>
+                <button onclick="loadRandomImages()">Άλλο ζευγάρι...</button>
+            </div>
+            <footer>
+                <a href="credits.htm">[ i ]</a>
+            </footer>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

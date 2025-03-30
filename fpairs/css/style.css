@@ -1,17 +1,18 @@
 #ratio {
     aspect-ratio: 16 / 9;  
     width: 100vw;  
-    height: 100vh;
+    height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
+	overflow:hidden;
   }
 
 .main-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 95vh;
+    height: 90vh;
 
 }
 
@@ -138,4 +139,23 @@ footer a {
 
 footer a:hover {
     text-decoration: underline;
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+.container {
+height: 90vh;
+max-height: 100vh;
+overflow-y: auto;
+}
+
+button {
+position: relative;
+bottom: 10px;
+}
+
+.txt {
+	font-size: 1.2em;
+}
+
+
 }

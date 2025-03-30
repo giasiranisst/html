@@ -81,6 +81,8 @@ body {
     align-items: center;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	    padding: 10px; /* Προσθέτουμε padding για να μην αγγίζει το κείμενο τις άκρες */
+    box-sizing: border-box; /* Εξασφαλίζουμε ότι το padding υπολογίζεται σωστά */
 }
 
 .card-front {
@@ -93,15 +95,19 @@ body {
     background-color: #fff;
     transform: rotateY(180deg);
     text-align: center;
-    padding: 10px;
     font-size: 1em;
-    word-wrap: break-word;
-    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Για να τοποθετηθεί το κείμενο κάθετα */
+    overflow: hidden; /* Βεβαιωνόμαστε ότι δεν ξεφεύγει το κείμενο */
 }
 
 
 .card-back span {
     font-weight: bold;
+    display: block;
+    word-wrap: break-word;
 }
 
 
@@ -156,4 +162,10 @@ footer a:hover {
     }
 
 
+}
+
+@media (max-width: 600px) {
+    .card-back {
+        font-size: 0.8em; /* Μειώνουμε το μέγεθος του κειμένου στις μικρές οθόνες */
+    }
 }

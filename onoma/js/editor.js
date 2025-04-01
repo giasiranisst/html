@@ -23,11 +23,11 @@ const editor = SUNEDITOR.create('editor', {
     "rtl": false,
     "katex": "window.katex",
     "width": "98%",
-    "minWidth": "30%",
+    "minWidth": "440px",
     "maxWidth": "100%",
-    "height": "calc(100vh - 250px)",  
-    "minHeight": "200px",  
-    "maxHeight": "calc(100vh - 50px)",  
+	"height": "auto",
+    "max-height": "100vh",  
+
     "charCounter" : true,
     "videoFileInput": false,
     "tabDisable": false,
@@ -322,4 +322,19 @@ openButton.addEventListener('click', function() {
 
     input.trigger('click');
     return false;
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Wait for SunEditor to initialize
+  setTimeout(() => {
+    const editorDialogs = document.querySelectorAll("input, span");
+
+    editorDialogs.forEach((input) => {
+      // Check if an aria-label already exists to avoid overwriting it
+      if (!input.hasAttribute("aria-label")) {
+        let placeholder = input.getAttribute("placeholder") || input.name || "Editor input";
+        input.setAttribute("aria-label", placeholder);
+      }
+    });
+  }, 1000); 
 });

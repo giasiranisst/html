@@ -12,7 +12,9 @@ const Export = {
     buttonClass: 'se-exportbtn',
 };
 
-
+const startText = `
+<table class="se-table=size=100"><tbody><tr><td><div contenteditable="false"><br></div></td><td><div contenteditable="false">ΟΝΟΜΑ<br></div></td><td><div contenteditable="false">ΖΩΟ</div></td><td><div contenteditable="false">ΠΡΑΓΜΑ</div></td></tr><tr><td><div contenteditable="false">Αα</div></td><td><div><br></div></td><td><div><br></div></td><td><div><br></div></td></tr><tr><td><div contenteditable="false">Ββ</div></td><td><div><br></div></td><td><div><br></div></td><td><div><br></div></td></tr><tr><td><div contenteditable="false">Γγ</div></td><td><div><br></div></td><td><div><br></div></td><td><div><br></div></td></tr><tr><td><div contenteditable="false">Δδ</div></td><td><div><br></div></td><td><div><br></div></td><td><div><br></div></td></tr><tr><td><div contenteditable="false">Εε</div></td><td><div><br></div></td><td><div><br></div></td><td><div><br></div></td></tr><tr><td><div contenteditable="false">Ζζ</div></td><td><div><br></div></td><td><div><br></div></td><td><div><br></div></td></tr><tr><td><div contenteditable="false">Ηη</div></td><td><div><br></div></td><td><div><br></div></td><td><div><br></div></td></tr><tr><td><div contenteditable="false">Θθ</div></td><td><div><br></div></td><td><div><br></div></td><td><div><br></div></td></tr><tr><td><div contenteditable="false">Ιι</div></td><td><div><br></div></td><td><div><br></div></td><td><div><br></div></td></tr><tr><td><div contenteditable="false">Κκ</div></td><td><div><br></div></td><td><div>​</div></td><td><div><br></div></td></tr><tr><td><div contenteditable="false">Λλ</div></td><td><div><br></div></td><td><div><br></div></td><td><div><br></div></td></tr><tr><td><div contenteditable="false">Μμ</div></td><td><div><br></div></td><td><div><br></div></td><td><div><br></div></td></tr><tr><td><div contenteditable="false">Νν</div></td><td><div><br></div></td><td><div><br></div></td><td><div><br></div></td></tr><tr><td><div contenteditable="false">Ξξ</div></td><td><div><br></div></td><td><div><br></div></td><td><div><br></div></td></tr><tr><td><div contenteditable="false">Οο</div></td><td><div><br></div></td><td><div><br></div></td><td><div><br></div></td></tr><tr><td><div contenteditable="false">Ππ</div></td><td><div><br></div></td><td><div><br></div></td><td><div><br></div></td></tr><tr><td><div contenteditable="false">Ρρ</div></td><td><div><br></div></td><td><div><br></div></td><td><div><br></div></td></tr><tr><td><div contenteditable="false">Σσ</div></td><td><div><br></div></td><td><div><br></div></td><td><div><br></div></td></tr><tr><td><div contenteditable="false">Ττ</div></td><td><div><br></div></td><td><div><br></div></td><td><div><br></div></td></tr><tr><td><div contenteditable="false">Υυ</div></td><td><div><br></div></td><td><div><br></div></td><td><div><br></div></td></tr><tr><td><div contenteditable="false">Φφ</div></td><td><div><br></div></td><td><div><br></div></td><td><div><br></div></td></tr><tr><td><div contenteditable="false">Χχ</div></td><td><div><br></div></td><td><div><br></div></td><td><div><br></div></td></tr><tr><td><div contenteditable="false">Ψψ</div></td><td><div><br></div></td><td><div><br></div></td><td><div><br></div></td></tr><tr><td><div contenteditable="false">Ωω</div></td><td><div><br></div></td><td><div><br></div></td><td><div><br></div></td></tr></tbody></table>'
+`;
 
 const editor = SUNEDITOR.create('editor', {
     "modules": ['dialog'],
@@ -33,7 +35,7 @@ const editor = SUNEDITOR.create('editor', {
     "autofocus": true,
 "font": ['sans-serif', 'Arial', 'Roboto', 'Noto Sans', 'Helvetica', 'Segoe UI', 'Ubuntu'],
 "defaultStyle": "font-family: Arial, Roboto, 'Noto Sans', Helvetica, 'Segoe UI', Ubuntu, sans-serif; font-size: 14px;",
-     "value": '<table class="se-table=size=100"><tbody><tr><td><div><br></div></td><td><div>ΟΝΟΜΑ<br></div></td><td><div>ΖΩΟ</div></td><td><div>ΠΡΑΓΜΑ</div></td></tr><tr><td><div>Αα</div></td><td><div><br></div></td><td><div><br></div></td><td><div><br></div></td></tr><tr><td><div>Ββ</div></td><td><div><br></div></td><td><div><br></div></td><td><div><br></div></td></tr><tr><td><div>Γγ</div></td><td><div><br></div></td><td><div><br></div></td><td><div><br></div></td></tr><tr><td><div>Δδ</div></td><td><div><br></div></td><td><div><br></div></td><td><div><br></div></td></tr><tr><td><div>Εε</div></td><td><div><br></div></td><td><div><br></div></td><td><div><br></div></td></tr><tr><td><div>Ζζ</div></td><td><div><br></div></td><td><div><br></div></td><td><div><br></div></td></tr><tr><td><div>Ηη</div></td><td><div><br></div></td><td><div><br></div></td><td><div><br></div></td></tr><tr><td><div>Θθ</div></td><td><div><br></div></td><td><div><br></div></td><td><div><br></div></td></tr><tr><td><div>Ιι</div></td><td><div><br></div></td><td><div><br></div></td><td><div><br></div></td></tr><tr><td><div>Κκ</div></td><td><div><br></div></td><td><div>​</div></td><td><div><br></div></td></tr><tr><td><div>Λλ</div></td><td><div><br></div></td><td><div><br></div></td><td><div><br></div></td></tr><tr><td><div>Μμ</div></td><td><div><br></div></td><td><div><br></div></td><td><div><br></div></td></tr><tr><td><div>Νν</div></td><td><div><br></div></td><td><div><br></div></td><td><div><br></div></td></tr><tr><td><div>Ξξ</div></td><td><div><br></div></td><td><div><br></div></td><td><div><br></div></td></tr><tr><td><div>Οο</div></td><td><div><br></div></td><td><div><br></div></td><td><div><br></div></td></tr><tr><td><div>Ππ</div></td><td><div><br></div></td><td><div><br></div></td><td><div><br></div></td></tr><tr><td><div>Ρρ</div></td><td><div><br></div></td><td><div><br></div></td><td><div><br></div></td></tr><tr><td><div>Σσ</div></td><td><div><br></div></td><td><div><br></div></td><td><div><br></div></td></tr><tr><td><div>Ττ</div></td><td><div><br></div></td><td><div><br></div></td><td><div><br></div></td></tr><tr><td><div>Υυ</div></td><td><div><br></div></td><td><div><br></div></td><td><div><br></div></td></tr><tr><td><div>Φφ</div></td><td><div><br></div></td><td><div><br></div></td><td><div><br></div></td></tr><tr><td><div>Χχ</div></td><td><div><br></div></td><td><div><br></div></td><td><div><br></div></td></tr><tr><td><div>Ψψ</div></td><td><div><br></div></td><td><div><br></div></td><td><div><br></div></td></tr><tr><td><div>Ωω</div></td><td><div><br></div></td><td><div><br></div></td><td><div><br></div></td></tr></tbody></table>',
+     "value": startText,
    "buttonList": [
         [
             "open",
@@ -217,6 +219,19 @@ const editor = SUNEDITOR.create('editor', {
         }
     }
 });
+
+const originalUndo = editor.core.history.undo;
+
+editor.core.history.undo = function () {
+
+	if (this.getCurrentIndex() > 1){
+		originalUndo.apply(this, arguments);
+	}		// Εκτελεί το κανονικό undo
+	else {
+		editor.setContents(startText);
+		editor.core.history.reset();
+	}
+};
 
 const exportButton = document.querySelector('.se-exportbtn');
 exportButton.addEventListener('click', async function() {

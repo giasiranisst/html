@@ -20,12 +20,12 @@ stage.add(layer);
 let backgroundRect = null;
 createOrUpdateBackgroundRect(stage, layer, '#fff');
 
-var size = Math.min(stage.width(), stage.height()) * 0.90;
+var size = Math.min(stage.width(), stage.height()) * 0.87;
 
 var imageObj = new Image();
 var konvaImg = new Konva.Image({
     x: (stage.width() - size) / 2,
-    y: (stage.height() - size - 100) / 2,
+    y: (stage.height() - size - 40) / 2,
     image: imageObj,
     width: 0, // Αρχικά θέτουμε σε 0 το μέγεθος
     height: 0, // Αρχικά θέτουμε σε 0 το μέγεθος
@@ -50,9 +50,9 @@ function resizeStage() {
     
     // Ενημέρωση εικόνας (αν υπάρχει)
     if (konvaImg) {
-        const size = Math.min(containerWidth, containerHeight) * 0.90; // 90% του μικρότερου μέρους
+        const size = Math.min(containerWidth, containerHeight) * 0.87; // 90% του μικρότερου μέρους
         konvaImg.x((containerWidth - size) / 2);
-        konvaImg.y((containerHeight - size) / 2);
+        konvaImg.y((containerHeight - size-40) / 2);
         konvaImg.width(size);
         konvaImg.height(size);
     }
@@ -73,7 +73,7 @@ function updateImageSize() {
     konvaImg.width(size);
     konvaImg.height(size);
     konvaImg.x((stage.width() - size) / 2);
-    konvaImg.y((stage.height() - size) / 2);
+    konvaImg.y((stage.height() - size-40) / 2);
     layer.batchDraw(); // Επανασχεδιάζουμε το layer για να δούμε τις αλλαγές
 }
 

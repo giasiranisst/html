@@ -5,8 +5,7 @@
   padding: 0;
 }
 html, body {
-	min-width: 440px;
-  min-height: 100vh;
+  min-width:550px;
   margin: 0;
   padding: 0;
 }
@@ -128,4 +127,8 @@ td {
     aspect-ratio: auto;
     height: auto;
   }
+}
+
+.se-char-counter {
+	color: black;
 }

@@ -22,12 +22,12 @@ const editor = SUNEDITOR.create('editor', {
     "mode": "classic",
     "rtl": false,
     "katex": "window.katex",
-    "width": "98%",
-    "minWidth": "440px",
+       "width": "98%",
+    "minWidth": "30%",
     "maxWidth": "100%",
-	"height": "auto",
-    "max-height": "100vh",  
-
+    "height": "calc(100vh - 360px)", 
+    "minHeight": "200px",  
+    "maxHeight": "calc(100vh - 50px)",  
     "charCounter" : true,
     "videoFileInput": false,
     "tabDisable": false,
@@ -327,7 +327,7 @@ openButton.addEventListener('click', function() {
 document.addEventListener("DOMContentLoaded", function () {
   // Wait for SunEditor to initialize
   setTimeout(() => {
-    const editorDialogs = document.querySelectorAll("input, span");
+    const editorDialogs = document.querySelectorAll("input, span, textarea, label, a");
 
     editorDialogs.forEach((input) => {
       // Check if an aria-label already exists to avoid overwriting it

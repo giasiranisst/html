@@ -87,6 +87,10 @@ tr:nth-child(1) {
   font-weight: bold;
 }
 
+.se-controller-table-cell, .se-controller-table {
+  display: none !important;
+}
+
 td {
   border: 1px solid gray !important;
 }

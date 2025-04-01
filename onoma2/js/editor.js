@@ -25,7 +25,7 @@ const editor = SUNEDITOR.create('editor', {
        "width": "98%",
     "minWidth": "30%",
     "maxWidth": "100%",
-    "height": "calc(100vh - 360px)", 
+    "height": "70vh", 
     "minHeight": "200px",  
     "maxHeight": "calc(100vh - 50px)",  
     "charCounter" : true,

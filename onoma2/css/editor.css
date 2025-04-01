@@ -1,3 +1,4 @@
+
 *, *::before, *::after {
   box-sizing: border-box;
   font-family: sans-serif;
@@ -5,7 +6,10 @@
   padding: 0;
 }
 html, body {
-  min-width:550px;
+	  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
   overflow-x: hidden;
 }
 
@@ -13,12 +17,12 @@ html, body {
   aspect-ratio: auto;
   width: 100%;
   height: auto;
-  overflow: hidden;
-  min-width:  550px;
+  min-width: 100%;
 }
 
 .excercise {
-  width: 95%;
+ width: 100%;  
+  max-width: 100%;  
   text-align: justify;
   color: #082b99;
   line-height: 1.5;
@@ -28,20 +32,37 @@ html, body {
   border-radius: 6px;
   border: 1px solid grey;
   margin: 10px auto;
+  box-sizing: border-box; 
+}
+
+.excercise ol {
+  margin: 0;
+  padding-left: 20px;  
+}
+
+.excercise li {
+  margin-bottom: 8px;  
 }
 
 .excercise span {
   color: #870d81;
 }
 
+.excercise h2 {
+  text-align: center;
+  font-size: 1.5em;
+}
+
 .container {
-	width: 100%;
-	min-width: 550px;
-	max-width: 100vw;
+  width: 100%;
+  max-width: 100%;
+  padding: 10px;
+  box-sizing: border-box;  
+  overflow-x: hidden;  
 }
 
 footer {
-  width: 98%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,7 +70,7 @@ footer {
   padding: 10px;
   font-size: 1em;
   border-radius: 5px;
-  position: relative;
+  position: sticky;
   bottom: 0;
   left: 0;
 }
@@ -63,10 +84,6 @@ footer a:hover {
   text-decoration: underline;
 }
 
-.excercise h2 {
-  text-align: center;
-  font-size: 1.5em;
-}
 
 
   .sun-editor-editable table {

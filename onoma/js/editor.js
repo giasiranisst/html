@@ -327,7 +327,7 @@ openButton.addEventListener('click', function() {
 document.addEventListener("DOMContentLoaded", function () {
   // Wait for SunEditor to initialize
   setTimeout(() => {
-    const editorDialogs = document.querySelectorAll("input, span, textarea, label, a");
+    const editorDialogs = document.querySelectorAll("input, span, textarea, label, a, button");
 
     editorDialogs.forEach((input) => {
       // Check if an aria-label already exists to avoid overwriting it

@@ -12,7 +12,7 @@ var container = document.getElementById('whitepage');
 var stage = new Konva.Stage({
     container: 'whitepage',
     width: container.offsetWidth,
-    height: container.offsetHeight
+    height: container.offsetHeight 
 });
 var layer = new Konva.Layer();
 stage.add(layer);
@@ -22,37 +22,39 @@ createOrUpdateBackgroundRect(stage, layer, '#fff');
 
 var size = Math.min(stage.width(), stage.height()) * 0.87;
 
+const ipsos = 60;
+
 var imageObj = new Image();
 var konvaImg = new Konva.Image({
     x: (stage.width() - size) / 2,
-    y: (stage.height() - size - 40) / 2,
+    y: (stage.height() - size - ipsos) / 2,
     image: imageObj,
-    width: 0, // Αρχικά θέτουμε σε 0 το μέγεθος
-    height: 0, // Αρχικά θέτουμε σε 0 το μέγεθος
+    width: 0,  
+    height: 0,  
     draggable: false,
 });
 layer.add(konvaImg);
 
 function resizeStage() {
-    // Λήψη πραγματικών διαστάσεων container
+ 
     const containerWidth = container.clientWidth;
     const containerHeight = container.clientHeight;
     
-    // Ενημέρωση stage
+ 
     stage.width(containerWidth);
     stage.height(containerHeight);
     
-    // Ενημέρωση background
+ 
     if (backgroundRect) {
         backgroundRect.width(containerWidth);
         backgroundRect.height(containerHeight);
     }
     
-    // Ενημέρωση εικόνας (αν υπάρχει)
+ 
     if (konvaImg) {
-        const size = Math.min(containerWidth, containerHeight) * 0.87; // 90% του μικρότερου μέρους
+        const size = Math.min(containerWidth, containerHeight) * 0.87;  
         konvaImg.x((containerWidth - size) / 2);
-        konvaImg.y((containerHeight - size-40) / 2);
+        konvaImg.y((containerHeight - size- ipsos) / 2);
         konvaImg.width(size);
         konvaImg.height(size);
     }
@@ -60,12 +62,12 @@ function resizeStage() {
     layer.batchDraw();
 }
 
-// Ακροατής για resize και orientation change
+ 
 window.addEventListener('resize', function() {
     setTimeout(resizeStage, 5);
 });
 
-// Αρχικοποίηση
+ 
 resizeStage();
 
 
@@ -73,24 +75,24 @@ function updateImageSize() {
     konvaImg.width(size);
     konvaImg.height(size);
     konvaImg.x((stage.width() - size) / 2);
-    konvaImg.y((stage.height() - size-40) / 2);
-    layer.batchDraw(); // Επανασχεδιάζουμε το layer για να δούμε τις αλλαγές
+    konvaImg.y((stage.height() - size- ipsos) / 2);
+    layer.batchDraw(); 
 }
 
 window.addEventListener('resize', () => {
     stage.width(container.offsetWidth);
     stage.height(container.offsetHeight + 100);
-    updateImageSize(); // Ενημερώνουμε το μέγεθος της εικόνας μετά την αλλαγή μεγέθους
+    updateImageSize();  
     layer.draw();
 });
 
-// Φορτώνουμε την εικόνα και εφαρμόζουμε το αρχικό μέγεθος
+ 
 imageObj.onload = () => {
     updateImageSize();
 };
 
 window.addEventListener('orientationchange', function() {
-    updateImageSize(); // Ενημερώνουμε το μέγεθος της εικόνας
+    updateImageSize();  
 });
 
 

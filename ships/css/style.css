@@ -10,6 +10,7 @@
     justify-content: center;
     aspect-ratio: 16 / 9;  
     width: 100%;  
+	min-width: 380px;
     height: calc(100vh - 50px);
   }
 
@@ -44,17 +45,19 @@ body {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Πλέγμα 3x3 */
+    grid-template-columns: repeat(3, 1fr);  
     gap: 10px;
-    width: 90vw; /* 90% του πλάτους της οθόνης */
+    width: 90vw;  
     max-width: 550px;
+
 
     overflow-y: auto;
 }
 
 .card {
     width: 100%;
-    aspect-ratio: 1/1; /* Κρατάει τις κάρτες τετράγωνες */
+
+    aspect-ratio: 1/1;  
     position: relative;
     perspective: 1000px;
     cursor: pointer;
@@ -81,8 +84,8 @@ body {
     align-items: center;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-	    padding: 10px; /* Προσθέτουμε padding για να μην αγγίζει το κείμενο τις άκρες */
-    box-sizing: border-box; /* Εξασφαλίζουμε ότι το padding υπολογίζεται σωστά */
+	    padding: 10px;  
+    box-sizing: border-box;  
 }
 
 .card-front {
@@ -99,8 +102,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column; /* Για να τοποθετηθεί το κείμενο κάθετα */
-    overflow: hidden; /* Βεβαιωνόμαστε ότι δεν ξεφεύγει το κείμενο */
+    flex-direction: column;  
+    overflow: hidden;  
 }
 
 
@@ -124,7 +127,7 @@ footer {
     text-align: right;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
     margin-bottom: 0;
-    margin-top: 50px; /* Απόσταση από τις κάρτες */
+    margin-top: 50px;  
 }
 
 footer a {
@@ -145,10 +148,10 @@ footer a:hover {
     }
 
     .grid {
-        grid-template-columns: repeat(3, 1fr); /* Διατηρείται το 3x3 */
+        grid-template-columns: repeat(3, 1fr);  
         gap: 10px;
-        max-width: 90vw; /* Περιορισμός για να χωράει το πλέγμα */
-        max-height: 70vh; /* Περιορισμός ύψους για τις κάρτες */
+        max-width: 90vw;  
+        max-height: 70vh;  
     }
 
     .title {
@@ -157,18 +160,62 @@ footer a:hover {
     }
 
     .card {
-        width: 28vw; /* Κάνουμε τις κάρτες μικρότερες */
-        max-width: 150px; /* Περιορισμός μεγέθους καρτών */
+        width: 28vw;  
+        max-width: 150px;  
+    }
+	
+	    .card-back {
+        font-size: 0.8em;  
     }
 
 
 }
 
 @media (max-width: 600px) {
-    .card-back {
-        font-size: 0.6em; /* Μειώνουμε το μέγεθος του κειμένου στις μικρές οθόνες */
+		.title h1 {
+        font-size: 1.2em;
+        margin-bottom: 5px;
+		margin-left:20px;
     }
-. card-back p {
+	
+    .card-back {
+        font-size: 0.6em;  
+    }
+	
+.card-back p {
 	margin-top: 0;
 	margin-bottom: 0;
+}
+}
+
+@media (max-width: 420px) {
+	#ratio {
+		min-width: 400px;
+	}
+	
+	.title h1 {
+        font-size: 0.9em;
+        text-align: center;
+		margin-left: 15px;
+		white-space: normal;
+    }
+
+    .card-back {
+        font-size: 0.5em;  
+    }
+	
+.card-back p {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+}
+
+@media (max-width: 350px) {
+	#ratio {
+		min-width: 320px;
+	}
+	
+	.title h1 {
+        font-size: 0.8em;
+    }
 }

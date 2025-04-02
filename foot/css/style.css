@@ -166,7 +166,7 @@ section {
 .stroke-colors .stroke-option {
   height: 20px;
   width: 20px;
-  border-radius: 50%;
+  border-radius: 10%;
   margin-top: 3px;
   position: relative;
 }
@@ -338,7 +338,7 @@ footer a:hover {
   .message-toggle {
     position: fixed;
     bottom:1px;
-    left: 10px;
+    left: 60px;
     background: none;
     border: none;
     cursor: pointer;
@@ -360,7 +360,7 @@ footer a:hover {
 	  visibility: hidden;
 	  position: fixed;
 	  bottom: 35px;
-	  left: 10px;
+	  left: 60px;
 	  background-color: #d2c7f9;
 	  padding: 10px;
 	  border-radius: 5px;
@@ -389,6 +389,7 @@ footer a:hover {
     align-items: center;
     padding: 2px 0;
     overflow-y: auto;
+	z-index:1;
   }
 
   .tools-board .row {
@@ -458,11 +459,20 @@ footer a:hover {
 .buttons .save-img  {
   padding: 5px 0;
 }
+
+.stroke-colors .stroke-option:nth-child(1) {
+  margin-top: 10px;
+}
+
+  footer {
+ z-index:0;
+  }
+
 }
 
 @media screen and (orientation: landscape) and (max-height: 500px) {
   body::before {
-    content: "Παρακαλώ γυρίστε τη συσκευή σας σε κάθετη προβολή ή αυξήστε το ύψος της οθόνης.";
+    content: "Παρακαλώ γυρίστε τη συσκευή σας σε κάθετη προβολή ή επιλέξτε συσκευή με μεγαλύτερο ύψος οθόνης.";
     display: flex;
     align-items: center;
     justify-content: center;

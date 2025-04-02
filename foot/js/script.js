@@ -20,7 +20,7 @@ stage.add(layer);
 let backgroundRect = null;
 createOrUpdateBackgroundRect(stage, layer, '#fff');
 
-var size = Math.min(stage.width(), stage.height()) * 0.87;
+var size = Math.min(stage.width(), stage.height()) * 0.9;
 
 const ipsos = 60;
 
@@ -52,7 +52,7 @@ function resizeStage() {
     
  
     if (konvaImg) {
-        const size = Math.min(containerWidth, containerHeight) * 0.87;  
+        const size = Math.min(containerWidth, containerHeight) * 0.9;  
         konvaImg.x((containerWidth - size) / 2);
         konvaImg.y((containerHeight - size- ipsos) / 2);
         konvaImg.width(size);

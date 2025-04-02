@@ -62,6 +62,22 @@ const group2Images = [
     'img/group2/psifiaka2-12.jpg',
 ];
 
+const group2Alts = [
+    'Πατίνι',
+	'Ρόπαλο',
+	'Μπαλόνι',
+	'Μήλο',
+	'Γόμα',
+	'Ψαλίδι',
+	'Ποδήλατο',
+	'Βιβλίο',
+	'Μαργαρίτα',
+	'Μάσκα',
+	'Ομπρέλα',
+	'Καπέλο'  
+];
+
+
 const group1Keys = Object.keys(group1Images);
 const group2Indices = Array.from({ length: group2Images.length }, (_, i) => i);  
 
@@ -110,10 +126,12 @@ function loadRandomImages() {
     article.innerText = group1Images[randomKey1].article;
     verb.innerText = group1Images[randomKey1].verb;
     img1.src = group1Images[randomKey1].image;
+	img1.alt = randomKey1;
     img1.classList.remove('hidden');
 
     const randomIndex2 = getNextShuffledNumber(2);
     img2.src = group2Images[randomIndex2];
+	img2.alt = group2Alts[randomIndex2];
     img2.classList.remove('hidden');
 }
 

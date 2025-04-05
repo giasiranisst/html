@@ -218,9 +218,9 @@ section {
 .row.buttons {
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Κατανέμει τα κουμπιά ομοιόμορφα */
-  align-items: left; /* Κρατάει την ευθυγράμμιση */
-  gap: 10px; /* Αφήνει λίγο κενό ανάμεσα */
+  justify-content: space-between;  
+  align-items: left; 
+  gap: 2px;  
 }
 
 .buttons button {

@@ -179,7 +179,7 @@ footer {
     }
   }
 
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 490px) {
     .message p {
         margin: 0;
     }
@@ -208,7 +208,7 @@ footer {
     }
 }
 
-@media screen and (orientation: landscape) {
+@media screen and (orientation: landscape) and (max-width: 490px){
     .message p {
         margin: 0;
     }

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="el" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Ας δημιουργήσουμε έναν πίνακα με θέμα τη φύση</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/konva.min.js"></script>
+  <script src="./js/sweetalert2.all.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <div class="parent">
+    <div class="maintitle">
+      <p>Ας δημιουργήσουμε έναν πίνακα με θέμα τη φύση</p>
+    </div>
+
+    <div class="container">
+
+      <div class="message-container">
+        <div class="message">
+          <p>Ας γίνουμε και εμείς μικροί ζωγράφοι και ας δημιουργήσουμε έναν πίνακα με θέμα τη φύση. <br><br>Στη
+            συνέχεια, ας γράψουμε με λίγα λόγια τι δείχνει ο πίνακας ζωγραφικής που φτιάξαμε.</p>
+        </div>
+      </div>
+
+      <section class="tools-board">
+        <div class="row">
+          <label class="title">Σχήματα</label>
+          <ul class="options">
+            <li class="option tool" id="rectangle">
+              <img src="icons/rectangle.svg" alt="Ορθογώνιο">
+              <span>Ορθογώνιο</span>
+            </li>
+            <li class="option tool" id="circle">
+              <img src="icons/circle.svg" alt="Κύκλος">
+              <span>Κύκλος</span>
+            </li>
+            <li class="option tool" id="triangle">
+              <img src="icons/triangle.svg" alt="Τρίγωνο">
+              <span>Τρίγωνο</span>
+            </li>
+
+          </ul>
+        </div>
+        <div class="row">
+          <label class="title">Εργαλεία</label>
+          <ul class="options">
+            <li class="option tool" id="selectiontool">
+              <img src="icons/mouse-pointer.svg" alt="Εργαλείο επιλογής">
+              <span>Επιλογή</span>
+            </li>
+            <li class="option tool" id="filltool">
+              <img src="icons/bucket.svg" alt="Γέμισμα">
+              <span>Γέμισμα</span>
+            </li>
+            <li class="option tool" id="line">
+              <img src="icons/line.svg" alt="Γραμμή">
+              <span>Γραμμή</span>
+            </li>
+            <li class="option active tool" id="brush">
+              <img src="icons/brush.svg" alt="Πινέλο">
+              <span>Πινέλο</span>
+            </li>
+            <li class="option tool" id="texttool">
+              <img src="icons/text.svg" alt="Κείμενο">
+              <span>Κείμενο</span>
+
+            </li>
+            <li class="option tool" id="eraser">
+              <img src="icons/eraser.svg" alt="Γόμα">
+              <span>Γόμα</span>
+            </li>
+            <li class="option">
+              <input type="range" id="size-slider" min="1" max="30" value="5">
+            </li>
+          </ul>
+        </div>
+
+        <div class="row colors base-colors">
+          <label class="title">Χρώμα γεμίσματος</label>
+          <ul class="options">
+            <li class="option selected"></li>
+            <li class="option"></li>
+            <li class="option"></li>
+            <li class="option"></li>
+            <li class="option">
+              <input type="color" id="color-picker" value="#4A98F7">
+            </li>
+          </ul>
+        </div>
+
+
+        <div class="row colors stroke-colors">
+          <label class="title">Χρώμα περιγράμματος</label>
+          <ul class="options stroke-options">
+            <li class="stroke-option"></li>
+            <li class="stroke-option selected"></li>
+            <li class="stroke-option"></li>
+            <li class="stroke-option"></li>
+            <li class="stroke-option">
+              <input type="color" id="stroke-picker" value="#4A98F7">
+            </li>
+          </ul>
+        </div>
+
+        <div class="row buttons">
+          <button class="clear-canvas">Καθαρισμός</button>
+          <button class="save-img">Αποθήκευση ως εικόνα</button>
+        </div>
+      </section>
+      <section id="whitepage" class="drawing-board"> </section>
+    </div>
+  </div>
+  <footer>
+    <a href="credits.htm">Συντελεστές ανάπτυξης</a>
+  </footer>
+  <script src="./js/script.js"></script>
+</body>
+
+</html>

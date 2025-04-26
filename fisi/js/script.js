@@ -14,7 +14,7 @@ var container = document.getElementById('whitepage');
 var stage = new Konva.Stage({
     container: 'whitepage',
     width: container.offsetWidth,
-    height: container.offsetHeight+100
+    height: container.offsetHeight
 });
 
 var layer = new Konva.Layer();
@@ -23,9 +23,41 @@ stage.add(layer);
 let backgroundRect = null;
 createOrUpdateBackgroundRect(stage, layer, 'white');
 
+
 var transformer = new Konva.Transformer();   
 layer.add(transformer);
 
+window.addEventListener('load', resizeStage);
+window.addEventListener('resize', function() {
+    setTimeout(resizeStage, 100);
+});
+
+function resizeStage() {
+    const containerWidth = container.offsetWidth;
+    const containerHeight = container.offsetHeight;
+  
+    // Υπολογισμός scaling σε σχέση με αρχικές διαστάσεις
+    const scaleX = containerWidth / stage.width();
+    const scaleY = containerHeight / stage.height();
+    const scale = Math.min(scaleX, scaleY);
+  
+    stage.width(containerWidth);
+    stage.height(containerHeight);
+    stage.scale({ x: scale, y: scale });
+  
+    if (backgroundRect) {
+      backgroundRect.size({
+        width: containerWidth / scale,
+        height: containerHeight / scale
+      });
+    }
+  
+    stage.draw();
+  }
+  
+
+
+  resizeStage();
 let inputPosition = {x:0, y:0};
 let fillColor = { checked: true}
 let isDrawing = false;
@@ -261,7 +293,7 @@ stage.on('mouseup touchend', (e) => {
             layer.add(shape);
             nodes.push(shape);
             stage.add(layer);
-            layer_temp.destroy;
+            layer_temp.destroy();
 
             stage.draw();
         }

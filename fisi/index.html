@@ -73,7 +73,7 @@
               <span>Γόμα</span>
             </li>
             <li class="option">
-              <input type="range" id="size-slider" min="1" max="30" value="5">
+              <input type="range" id="size-slider" min="1" max="30" value="5" aria-label="Μέγεθος">
             </li>
           </ul>
         </div>
@@ -106,16 +106,24 @@
         </div>
 
         <div class="row buttons">
-          <button class="clear-canvas">Καθαρισμός</button>
-          <button class="save-img">Αποθήκευση ως εικόνα</button>
+          <button class="clear-canvas" aria-label="Καθαρισμός">
+          <img src="icons/trash.svg" alt="Καθαρισμός">
+          <span>Καθαρισμός</span>
+        </button>
+
+        <button class="save-img" aria-label="Αποθήκευση">
+          <img src="icons/download.svg" alt="Αποθήκευση">
+          <span>Αποθήκευση</span>
+          </button>
         </div>
       </section>
       <section id="whitepage" class="drawing-board"> </section>
     </div>
   </div>
   <footer>
-    <a href="credits.htm">Συντελεστές ανάπτυξης</a>
-  </footer>
+	  <button class="message-toggle" aria-label="Κρυφό μενού"></button>
+      <a href="credits.htm">[ i ]</a>
+    </footer>
   <script src="./js/script.js"></script>
 </body>
 

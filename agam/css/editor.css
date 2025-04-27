@@ -48,6 +48,10 @@ body {
     color: #ac00e6
   }
 
+  .sun-editor-editable {
+    color: #24155b !important;
+}
+
   footer {
     width: calc(100vw - 37px);
     display: flex;  

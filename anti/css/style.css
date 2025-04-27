@@ -34,7 +34,7 @@ body {
     align-items: center;
     position: relative;
     padding-top: 40px;
-
+overflow-y: auto;
 
 }
 .matching-pairs {

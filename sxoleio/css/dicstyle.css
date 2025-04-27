@@ -165,12 +165,12 @@ ul li:last-child {
     color: #7e7e7e;
 }
 
-.search-wrapper {
+.search {
     position: relative;
     display: inline-block;
   }
   
-  .search-wrapper::after {
+  .search::after {
     content: '▼';
     position: absolute;
     right: 10px;

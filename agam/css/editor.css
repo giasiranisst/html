@@ -48,10 +48,6 @@ body {
     color: #ac00e6
   }
 
-  .sun-editor-editable {
-    color: #24155b !important;
-}
-
   footer {
     width: calc(100vw - 37px);
     display: flex;  
@@ -75,6 +71,10 @@ body {
   footer a:hover {
     text-decoration: underline; 
   }
+
+.se-char-counter {
+	color: black;
+}
   
   @media screen and (max-width: 767px) {
     .excercise {

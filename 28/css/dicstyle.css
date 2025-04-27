@@ -150,7 +150,7 @@ body {
 
 .container li .details span {
     font-size: 15px;
-    color: #7e7e7e;
+    color: #545454;
     line-height: 160%;
 }
 
@@ -160,8 +160,9 @@ body {
     display: inline-block;
   }
   
+
   .search::after {
-    content: '▼';
+
     position: absolute;
     right: 10px;
     top: 50%;
@@ -189,33 +190,7 @@ select:focus {
     border-color: #007bff;
 }
 
-@media (max-height: 400px) {
-    #dropdownMenu{
-       max-height: 50px;
-       min-width: 620px;
-   }
-}
 
-@media (max-width: 600px) {
-	
-	    .main-container {
-            display: flex;
-            width: 97%;
-            height: 92vh;
-            overflow: hidden;
-            margin: 0 auto;
-    }
-	
-		 #dropdownMenu{
-		overflow: auto;
-		    height: 80%;
-			font-size: 0.8em;
-		
-	}
-	
-	.letters {
-		font-size: 0.7em;
-}
 .container {
     padding: 0;
     height: 91vh;
@@ -231,9 +206,9 @@ select:focus {
  }
  
 .container li .details span {
- font-size:0.7em; }
- 
+ font-size:0.7em; 
 }
+
 
 
 footer {
@@ -260,3 +235,33 @@ footer {
     text-decoration: underline; 
   }
   
+  
+@media (max-width: 600px) {
+	
+    .main-container {
+        display: flex;
+        width: 97%;
+        height: 92vh;
+        overflow: hidden;
+        margin: 0 auto;
+}
+
+     #dropdownMenu{
+    overflow: auto;
+        height: 80%;
+        font-size: 0.8em;
+    
+}
+
+.letters {
+    font-size: 0.7em;
+}
+}
+
+@media (max-height: 450px) {
+    #dropdownMenu{
+       max-height: 50px;
+       font-size: 12px;
+   }
+
+}

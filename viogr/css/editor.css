@@ -1,0 +1,127 @@
+ body {
+   top: 0;
+   margin-left: 20px;
+   padding: 0;
+   height: 100%;
+ }
+
+ .wrapper {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 5px 20px;
+   overflow-y: hidden;
+ }
+
+ #ratio {
+   aspect-ratio: 16 / 9;
+   width: 100%;
+   max-width: 900px;
+
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   font-size: 1.5em;
+   padding: 5px;
+ }
+
+ .excercise {
+   width: 94%;
+   max-width: 900px;
+   text-align: justify;
+   color: blue;
+   line-height: 1.5;
+   font-size: 18px;
+   font-family: Georgia, serif;
+   background-color: yellow;
+   padding: 1px 10px 1px 10px;
+   border-radius: 6px;
+   border: 1px solid grey;
+
+   margin: 0 auto;
+   margin-bottom: 5px;
+ }
+
+ .excercise span {
+   color: #ac00e6
+ }
+
+
+ .sun-editor-editable table {
+   table-layout: fixed;
+   width: 100%;
+   overflow-x: auto;
+ }
+
+ .sun-editor-editable td:nth-child(1) {
+   width: 120px;
+   background-color: #d6f4f5;
+   font-weight: bold;
+ }
+
+ tr:nth-child(1) {
+   background-color: #d6f4f5;
+   font-weight: bold;
+ }
+
+ .se-controller-table-cell,
+ .se-controller-table,
+ .se-controller-resizing,
+ .se-modal-resize,
+ .sun-editor .se-image-container .se-image-resizing-bar,
+.sun-editor .se-image-container .se-image-btn-delete {
+    display: none !important;
+}
+
+.se-resizing-container, .se-line-breaker-component {
+  display: none !important;
+}
+
+.sun-editor img {
+  user-select: none;  
+}
+
+ .sun-editor .se-image-wrapper {
+  pointer-events: none;  
+  user-select: none;     
+}
+
+ td {
+   border: 1px solid gray !important;
+ }
+
+ .sun-editor-editable .row_edit {
+  display: inline !important;
+ }
+
+
+ footer {
+   width: calc(100vw - 37px);
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+   background: #f7f8f8;
+   padding: 10px 13px;
+   font-size: 16px;
+   border-radius: 5px;
+   position: fixed;
+   bottom: 0;
+   left: 0;
+   z-index: 1000;
+ }
+
+ footer a {
+   color: black;
+   text-decoration: none;
+ }
+
+ footer a:hover {
+   text-decoration: underline;
+ }
+
+ @media screen and (max-width: 767px) {
+   .excercise {
+     font-size: 12px;
+   }
+ }

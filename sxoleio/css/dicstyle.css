@@ -162,7 +162,7 @@ ul li:last-child {
 
 .container li .details span {
     font-size: 15px;
-    color: #7e7e7e;
+    color: #545454;
 }
 
 .search {
@@ -197,3 +197,28 @@ select:focus {
     outline: none;
     border-color: #007bff;
 }
+
+footer {
+    width: calc(100vw - 5px);
+    display: flex;  
+    justify-content: flex-end;  
+    align-items: center; 
+    background: #f7f8f8;
+    padding: 5px 1px;  
+    font-size: 16px;
+    border-radius: 5px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+	z-index: 1000;
+  }
+  
+  footer a {
+    color: black;
+    text-decoration: none;  
+  }
+  
+  footer a:hover {
+    text-decoration: underline; 
+  }
+  

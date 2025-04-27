@@ -55,7 +55,7 @@ body {
 }
 
 .letters ul li:hover {
-    background:dodgerblue;
+    background:#0054A8;
     color: white;
 }
 
@@ -68,7 +68,7 @@ body {
     text-align: center;
     font-size: 1.2em;
     margin-bottom: 5px;
-    color:rgb(114, 3, 99);
+    color:rgb(90, 0, 80);
     font-weight: bolder;
 }
 

@@ -218,8 +218,8 @@ section {
 .row.buttons {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;  
-  align-items: left; 
+  justify-content: space-between; 
+  align-items: left;  
   gap: 2px;  
 }
 

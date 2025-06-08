@@ -23,6 +23,11 @@ body {
   height: auto;
 }
 
+.message h3 {
+  font-weight:bolder;
+}
+
+
 .container {
   display: flex;
   width: 100%;

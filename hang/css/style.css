@@ -38,8 +38,10 @@ body {
 }
 
 .hangman-box {
-    margin-top: 50px;
+    margin-top: 100px;
 }
+
+
 
 .hangman-box img {
     user-select: none;
@@ -96,6 +98,10 @@ li .letter {
     font-size: 1.1rem;
     font-weight: 500;
     margin-bottom: 15px;
+}
+
+h4.title {
+    font-weight: 900;
 }
 
 .game-box h4 b {

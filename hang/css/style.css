@@ -20,14 +20,14 @@ body {
     padding: 0 10px;
     align-items: center;
     justify-content: center;
-    max-height: 90vh;
+    max-height: 100vh;
+	margin-top:10px;
     background: #d6daf5;
 }
 
 .container {
     display: flex;
     width: 90%;
-    height:auto;
     gap: 70px;
     padding: 60px 40px;
     background: #fff;

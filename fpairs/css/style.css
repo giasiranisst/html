@@ -109,6 +109,10 @@ button:hover {
 background-color: #1474c4;
 }
 
+.exampleb {
+	font-size: 1.1em;
+}
+
 .example {
 color: #870d81;
 font-size: 1.2em;

@@ -4,6 +4,7 @@ const guessesText = document.querySelector(".guess-text b");
 const wordDisplay = document.querySelector(".word-display");
 const gameModal = document.querySelector(".game-modal");
 const playAgainBtn = document.querySelector(".play-again");
+const sound = document.getElementById('failSound');
 
 let currentWord, currentHint, orrectLetters, wrongGuessCount;
 const totalWords = 6;
@@ -62,6 +63,8 @@ const initGame = (button, clickedLetter) => {
     } 
     
     if (noneHint_0) {
+            sound.currentTime = 0;
+    sound.play();
         wrongGuessCount++;
         guessesText.innerText = `${wrongGuessCount} από ${maxGuesses}`;
         hangmanImage.src = `img/dinosaur-${wrongGuessCount}.jpg`;

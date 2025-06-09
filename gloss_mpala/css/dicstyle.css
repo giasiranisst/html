@@ -166,10 +166,15 @@ body {
     }
 }
 
-@media (max-height: 400px) {
+@media (max-height: 680px) {
 	 #dropdownMenu{
 		max-height: 50px;
 	}
+
+    .container .content { 
+        overflow-y: visible;
+            max-height: calc(90vh - 300px); 
+    }
 }
 
 /* Σβηνει την τελευταια γραμμη */

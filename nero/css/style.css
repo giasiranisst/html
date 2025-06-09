@@ -330,7 +330,7 @@ footer a:hover {
 }
 
 /* Βασικές αλλαγές για κινητές συσκευές */
-@media screen and (max-width: 768px)   {
+@media screen and ((max-width: 768px) or (max-height: 680px))  {
   /* Κουμπί hamburger menu για εμφάνιση μηνύματος */
     @keyframes blink {
   0%, 100% { opacity: 1; } 

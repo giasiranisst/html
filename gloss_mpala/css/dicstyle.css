@@ -54,7 +54,7 @@ body {
 .container .content {
     flex-grow: 1;  
     overflow-y: auto; 
-    max-height: calc(90vh - 100px); 
+    max-height: calc(90vh - 200px); 
     padding-right: 10px;
 }
 

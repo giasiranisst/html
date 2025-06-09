@@ -51,7 +51,7 @@ section {
   width: 200px;
   padding: 15px 22px 0;
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: visible;
 }
 
 .tools-board .row {

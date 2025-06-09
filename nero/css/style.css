@@ -293,7 +293,7 @@ section {
   background-color: #d2c7f9 ;
   text-align: center;
   padding: 0 5px 3px 5px;
-  flex: 0 0 100px;
+  flex: 0 0 150px;
 }
 
 .message span {
@@ -330,7 +330,7 @@ footer a:hover {
 }
 
 /* Βασικές αλλαγές για κινητές συσκευές */
-@media screen and ((max-width: 768px)  or (max-height: 680px))  {
+@media screen and (max-width: 768px)   {
   /* Κουμπί hamburger menu για εμφάνιση μηνύματος */
     @keyframes blink {
   0%, 100% { opacity: 1; } 

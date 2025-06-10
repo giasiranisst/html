@@ -9,7 +9,7 @@ toolBtns = document.querySelectorAll(".tool"),
 fileinput = document.querySelector("#file_input");
 
 let undoStack = [];
-const maxUndoSteps = 3;
+const maxUndoSteps = 5;
 
 var container = document.getElementById('whitepage');
 var stage = new Konva.Stage({
@@ -75,41 +75,49 @@ resizeStage();
 
 
 function updateImageSize() {
-    const imgWidth = imageObj.width;
-    const imgHeight = imageObj.height;
+  if (!originalImageSize.width || !originalImageSize.height) return;
 
-    const containerWidth = stage.width();
-    const containerHeight = stage.height();
-    const maxSize = Math.min(containerWidth, containerHeight) * 0.9;
+  const imgWidth = originalImageSize.width;
+  const imgHeight = originalImageSize.height;
 
-    // Υπολογισμός scale για να χωράει σωστά
-    const scale = Math.min(maxSize / imgWidth, maxSize / imgHeight);
+  const containerWidth = stage.width();
+  const containerHeight = stage.height();
 
-    const newWidth = imgWidth * scale*1.3;
-    const newHeight = imgHeight * scale*1.3;
+  const scale = Math.min(
+    (containerWidth * 0.9) / imgWidth,
+    (containerHeight * 0.9) / imgHeight
+  );
 
-    konvaImg.width(newWidth);
-    konvaImg.height(newHeight);
-    konvaImg.x((containerWidth - newWidth) / 2);
-    konvaImg.y((containerHeight - newHeight - ipsos) / 2);
+  const newWidth = imgWidth * scale;
+  const newHeight = imgHeight * scale;
 
-    layer.batchDraw();
+  konvaImg.width(newWidth);
+  konvaImg.height(newHeight);
+  konvaImg.x((containerWidth - newWidth) / 2);
+  konvaImg.y((containerHeight - newHeight - ipsos) / 2);
+
+  layer.batchDraw();
 }
+
 
 window.addEventListener('resize', () => {
     stage.width(container.offsetWidth);
-    stage.height(container.offsetHeight + 100);
+    stage.height(container.offsetHeight);
     updateImageSize();  
     layer.draw();
 });
 
  
+let originalImageSize = { width: 0, height: 0 };
+
 imageObj.onload = () => {
-    updateImageSize();
+  originalImageSize.width = imageObj.naturalWidth;
+  originalImageSize.height = imageObj.naturalHeight;
+  updateImageSize();
 };
 
 window.addEventListener('orientationchange', function() {
-    updateImageSize();  
+     setTimeout(updateImageSize, 100); 
 });
 
 
@@ -306,7 +314,7 @@ stage.on('mousedown touchstart', (e) => {
             points: [pos.x, pos.y, pos.x, pos.y],
             listening: selectedTool === 'brush'
         });
-        saveToUndoStack({ type: 'shape-add',lastShape});
+        saveToUndoStack({ type: 'shape-add', shape: lastShape});
         layer.add(lastShape);
     }
     else if (selectedTool === "filltool") {
@@ -397,7 +405,7 @@ stage.on('mouseup touchend', (e) => {
             stage.add(layer);
             layer_temp.destroy;
  
-           saveToUndoStack({ type: 'shape-add',shape});
+           saveToUndoStack({ type: 'shape-add',shape: shape});
            stage.draw();
 
         }

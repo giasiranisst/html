@@ -15,7 +15,7 @@ var container = document.getElementById('whitepage');
 var stage = new Konva.Stage({
     container: 'whitepage',
     width: container.offsetWidth,
-    height: container.offsetHeight 
+    height: container.offsetHeight
 });
 var layer = new Konva.Layer();
 stage.add(layer);
@@ -32,92 +32,92 @@ var konvaImg = new Konva.Image({
     x: (stage.width() - size) / 2,
     y: (stage.height() - size - ipsos) / 2,
     image: imageObj,
-    width: 0,  
-    height: 0,  
+    width: 0,
+    height: 0,
     draggable: false,
 });
 layer.add(konvaImg);
 
 function resizeStage() {
- 
+
     const containerWidth = container.clientWidth;
     const containerHeight = container.clientHeight;
-    
- 
+
+
     stage.width(containerWidth);
     stage.height(containerHeight);
-    
- 
+
+
     if (backgroundRect) {
         backgroundRect.width(containerWidth);
         backgroundRect.height(containerHeight);
     }
-    
- 
+
+
     if (konvaImg) {
-        const size = Math.min(containerWidth, containerHeight) * 0.9;  
+        const size = Math.min(containerWidth, containerHeight) * 0.9;
         konvaImg.x((containerWidth - size) / 2);
-        konvaImg.y((containerHeight - size- ipsos) / 2);
+        konvaImg.y((containerHeight - size - ipsos) / 2);
         konvaImg.width(size);
         konvaImg.height(size);
     }
-    
+
     layer.batchDraw();
 }
 
- 
-window.addEventListener('resize', function() {
+
+window.addEventListener('resize', function () {
     setTimeout(resizeStage, 5);
 });
 
- 
+
 resizeStage();
 
 
 function updateImageSize() {
-  if (!originalImageSize.width || !originalImageSize.height) return;
+    if (!originalImageSize.width || !originalImageSize.height) return;
 
-  const imgWidth = originalImageSize.width;
-  const imgHeight = originalImageSize.height;
+    const imgWidth = originalImageSize.width;
+    const imgHeight = originalImageSize.height;
 
-  const containerWidth = stage.width();
-  const containerHeight = stage.height();
+    const containerWidth = stage.width();
+    const containerHeight = stage.height();
 
-  const scale = Math.min(
-    (containerWidth * 0.9) / imgWidth,
-    (containerHeight * 0.9) / imgHeight
-  );
+    const scale = Math.min(
+        (containerWidth * 0.9) / imgWidth,
+        (containerHeight * 0.9) / imgHeight
+    );
 
-  const newWidth = imgWidth * scale;
-  const newHeight = imgHeight * scale;
+    const newWidth = imgWidth * scale;
+    const newHeight = imgHeight * scale;
 
-  konvaImg.width(newWidth);
-  konvaImg.height(newHeight);
-  konvaImg.x((containerWidth - newWidth) / 2);
-  konvaImg.y((containerHeight - newHeight - ipsos) / 2);
+    konvaImg.width(newWidth);
+    konvaImg.height(newHeight);
+    konvaImg.x((containerWidth - newWidth) / 2);
+    konvaImg.y((containerHeight - newHeight - ipsos) / 2);
 
-  layer.batchDraw();
+    layer.batchDraw();
 }
 
 
 window.addEventListener('resize', () => {
     stage.width(container.offsetWidth);
     stage.height(container.offsetHeight);
-    updateImageSize();  
+    updateImageSize();
     layer.draw();
 });
 
- 
+
 let originalImageSize = { width: 0, height: 0 };
 
 imageObj.onload = () => {
-  originalImageSize.width = imageObj.naturalWidth;
-  originalImageSize.height = imageObj.naturalHeight;
-  updateImageSize();
+    originalImageSize.width = imageObj.naturalWidth;
+    originalImageSize.height = imageObj.naturalHeight;
+    updateImageSize();
 };
 
-window.addEventListener('orientationchange', function() {
-     setTimeout(updateImageSize, 100); 
+window.addEventListener('orientationchange', function () {
+    setTimeout(updateImageSize, 100);
 });
 
 
@@ -145,12 +145,11 @@ let shape, lastShape;
 // event listeners
 
 function saveToUndoStack(node) {   // save to undo
-  undoStack.push(node);
-  if (undoStack.length > maxUndoSteps) {
-      undoStack.shift();
-  }
+    undoStack.push(node);
+    if (undoStack.length > maxUndoSteps) {
+        undoStack.shift();
+    }
 }
-
 
 // tools
 toolBtns.forEach(btn => {
@@ -168,22 +167,25 @@ toolBtns.forEach(btn => {
             if (last.type === 'shape-add' && last.shape && typeof last.shape.destroy === 'function') {
                 last.shape.destroy();
             } else if (last.type === 'style-change') {
-                    if (last.prevFill !== undefined) last.shape.fill(last.prevFill);
-                    if (last.prevStroke !== undefined) last.shape.stroke(last.prevStroke);
+                if (last.prevFill !== undefined) last.shape.fill(last.prevFill);
+                if (last.prevStroke !== undefined) last.shape.stroke(last.prevStroke);
             } else if (last.type === 'flood-fill') {
-                    const context = getCanvasContextFromKonvaImage(last.shape);
-                    context.putImageData(last.prevImageData, 0, 0);
+                const context = getCanvasContextFromKonvaImage(last.shape);
+                context.putImageData(last.prevImageData, 0, 0);
 
-                    if (last.shapeType === 'Image') {
-                        last.shape.image(context.canvas);
-                    } else if (last.shapeType === 'Rect' && last.shape.fillPatternImage()) {
-                        last.shape.fillPatternImage(context.canvas);
-                    }
-                    }
+                if (last.shapeType === 'Image') {
+                    last.shape.image(context.canvas);
+                } else if (last.shapeType === 'Rect' && last.shape.fillPatternImage()) {
+                    last.shape.fillPatternImage(context.canvas);
+                }
+            } else if (last.type === 'background-fill') {
+                last.shape.fill(last.prevFill);
+            }
             layer.draw();
         }
     });
 });
+
 
 function inactivate_btns() {
     document.querySelector(".options .active").classList.remove("active");
@@ -314,7 +316,7 @@ stage.on('mousedown touchstart', (e) => {
             points: [pos.x, pos.y, pos.x, pos.y],
             listening: selectedTool === 'brush'
         });
-        saveToUndoStack({ type: 'shape-add', shape: lastShape});
+        saveToUndoStack({ type: 'shape-add', shape: lastShape });
         layer.add(lastShape);
     }
     else if (selectedTool === "filltool") {
@@ -404,12 +406,12 @@ stage.on('mouseup touchend', (e) => {
             layer.add(shape);
             stage.add(layer);
             layer_temp.destroy;
- 
-           saveToUndoStack({ type: 'shape-add',shape: shape});
-           stage.draw();
+
+            saveToUndoStack({ type: 'shape-add', shape: shape });
+            stage.draw();
 
         }
-                   
+
     }
 });
 
@@ -427,6 +429,14 @@ stage.on('click', function (e) {
 function fillWithColor(e) {
 
     if (e.target._id === 1) {
+        const previousColor = backgroundRect.fill();
+
+        saveToUndoStack({
+            type: 'background-fill',
+            shape: backgroundRect,
+            prevFill: previousColor
+        });
+
         createOrUpdateBackgroundRect(stage, layer, selectedColor);
         return;
     }
@@ -454,20 +464,20 @@ function fillWithColor(e) {
             } else {
                 if (sameColors(parseColor(konvaShape.fill()), parseColor(konvaShape.stroke()))) {
                     saveToUndoStack({
-  type: 'style-change',
-  shape: konvaShape,
-  prevFill: konvaShape.fill(),
-  prevStroke: konvaShape.stroke()
-});
+                        type: 'style-change',
+                        shape: konvaShape,
+                        prevFill: konvaShape.fill(),
+                        prevStroke: konvaShape.stroke()
+                    });
                     konvaShape.fill(selectedColor);
                     konvaShape.stroke(selectedColor);
                 } else {
                     saveToUndoStack({
-  type: 'style-change',
-  shape: konvaShape,
-  prevFill: konvaShape.fill(),
-  prevStroke: konvaShape.stroke()
-});
+                        type: 'style-change',
+                        shape: konvaShape,
+                        prevFill: konvaShape.fill(),
+                        prevStroke: konvaShape.stroke()
+                    });
                     konvaShape.fill(selectedColor);
                 }
             }
@@ -481,11 +491,11 @@ function fillWithColor(e) {
     } else if ((shapeType === 'Rect' || shapeType === 'Circle') && !konvaShape.fillPatternImage()) {
         if (sameColors(parseColor(konvaShape.fill()), parseColor(konvaShape.stroke()))) {
             saveToUndoStack({
-  type: 'style-change',
-  shape: konvaShape,
-  prevFill: konvaShape.fill(),
-  prevStroke: konvaShape.stroke()
-});
+                type: 'style-change',
+                shape: konvaShape,
+                prevFill: konvaShape.fill(),
+                prevStroke: konvaShape.stroke()
+            });
             konvaShape.fill(selectedColor);
             konvaShape.stroke(selectedColor);
         } else {
@@ -499,19 +509,19 @@ function fillWithColor(e) {
                 }
                 if (pos.x >= sizeWithoutborder.x1 && pos.x <= sizeWithoutborder.x2 && pos.y >= sizeWithoutborder.y1 && pos.y <= sizeWithoutborder.y2) {
                     saveToUndoStack({
-  type: 'style-change',
-  shape: konvaShape,
-  prevFill: konvaShape.fill(),
-  prevStroke: konvaShape.stroke()
-});
+                        type: 'style-change',
+                        shape: konvaShape,
+                        prevFill: konvaShape.fill(),
+                        prevStroke: konvaShape.stroke()
+                    });
                     konvaShape.fill(selectedColor);
                 } else {
                     saveToUndoStack({
-  type: 'style-change',
-  shape: konvaShape,
-  prevFill: konvaShape.fill(),
-  prevStroke: konvaShape.stroke()
-});
+                        type: 'style-change',
+                        shape: konvaShape,
+                        prevFill: konvaShape.fill(),
+                        prevStroke: konvaShape.stroke()
+                    });
                     konvaShape.stroke(selectedColor);
                 }
             } else {
@@ -520,20 +530,20 @@ function fillWithColor(e) {
 
                 if (distanceFromCenter <= konvaShape.radius() + konvaShape.strokeWidth() / 2 &&
                     distanceFromCenter >= konvaShape.radius() - konvaShape.strokeWidth() / 2) {
-                        saveToUndoStack({
-  type: 'style-change',
-  shape: konvaShape,
-  prevFill: konvaShape.fill(),
-  prevStroke: konvaShape.stroke()
-});
+                    saveToUndoStack({
+                        type: 'style-change',
+                        shape: konvaShape,
+                        prevFill: konvaShape.fill(),
+                        prevStroke: konvaShape.stroke()
+                    });
                     konvaShape.stroke(selectedColor);
                 } else {
                     saveToUndoStack({
-  type: 'style-change',
-  shape: konvaShape,
-  prevFill: konvaShape.fill(),
-  prevStroke: konvaShape.stroke()
-});
+                        type: 'style-change',
+                        shape: konvaShape,
+                        prevFill: konvaShape.fill(),
+                        prevStroke: konvaShape.stroke()
+                    });
                     konvaShape.fill(selectedColor);
                 }
             }
@@ -542,11 +552,11 @@ function fillWithColor(e) {
         return;
     } else {
         saveToUndoStack({
-  type: 'style-change',
-  shape: konvaShape,
-  prevFill: konvaShape.fill(),
-  prevStroke: konvaShape.stroke()
-});
+            type: 'style-change',
+            shape: konvaShape,
+            prevFill: konvaShape.fill(),
+            prevStroke: konvaShape.stroke()
+        });
         konvaShape.stroke(selectedColor);
         layer.draw();
         return;
@@ -570,12 +580,12 @@ function fillWithColor(e) {
 
         // ✅ Αποθήκευση στο undo stack
         saveToUndoStack({
-        type: 'flood-fill',
-        shape: konvaShape,
-        prevImageData: backupImageData,
-        shapeType: shapeType
+            type: 'flood-fill',
+            shape: konvaShape,
+            prevImageData: backupImageData,
+            shapeType: shapeType
         });
-        
+
         floodFill(data, imageData.width, imageData.height, x, y, targetColor, newColor, tolerance);
         const context = getCanvasContextFromKonvaImage(konvaShape);
         context.putImageData(imageData, 0, 0);
@@ -831,28 +841,28 @@ const drawShape = () => {
 };
 
 document.addEventListener("DOMContentLoaded", function () {
-  const messageToggle = document.querySelector(".message-toggle");
-  const messageContainer = document.querySelector(".message-container");
+    const messageToggle = document.querySelector(".message-toggle");
+    const messageContainer = document.querySelector(".message-container");
 
-  messageToggle.addEventListener("click", function () {
-    if (messageContainer.classList.contains("show")) {
-      messageContainer.classList.remove("show");
-    } else {
-      messageContainer.classList.add("show");
-    }
-  });
+    messageToggle.addEventListener("click", function () {
+        if (messageContainer.classList.contains("show")) {
+            messageContainer.classList.remove("show");
+        } else {
+            messageContainer.classList.add("show");
+        }
+    });
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const messageToggle = document.querySelector(".message-toggle");
+    const messageToggle = document.querySelector(".message-toggle");
 
-  // Προσθήκη αναβοσβήματος κατά την εκκίνηση
-  messageToggle.classList.add("blinking");
+    // Προσθήκη αναβοσβήματος κατά την εκκίνηση
+    messageToggle.classList.add("blinking");
 
-  // Αφαίρεση του αναβοσβήματος μετά από 5 δευτερόλεπτα
-  setTimeout(() => {
-    messageToggle.classList.remove("blinking");
-  }, 5000);
+    // Αφαίρεση του αναβοσβήματος μετά από 5 δευτερόλεπτα
+    setTimeout(() => {
+        messageToggle.classList.remove("blinking");
+    }, 5000);
 });
 
 

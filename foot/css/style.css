@@ -59,7 +59,7 @@ section {
 
 .row .options {
   list-style: none;
-  margin: 10px 0 0 5px;
+  margin: 5px 0 0 5px;
 }
 
 .row .options .option {
@@ -411,7 +411,7 @@ footer a:hover {
   }
 
   .tools-board .option {
-    margin: 5px 0;
+    margin: 4px 0;
 
     text-align: center;
     position: relative;
@@ -434,6 +434,10 @@ footer a:hover {
     padding: 5px;
     border-radius: 3px;
     white-space: nowrap;
+  }
+
+  #size-slider {
+    margin-top: 2px;
   }
 
   /* Προσαρμογή του whitepage ώστε να καταλαμβάνει όλο τον υπόλοιπο χώρο */
@@ -461,11 +465,11 @@ footer a:hover {
 }
 
 .buttons .save-img  {
-  padding: 5px 0;
+  padding: 1px 0;
 }
 
 .stroke-colors .stroke-option:nth-child(1) {
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
   footer {

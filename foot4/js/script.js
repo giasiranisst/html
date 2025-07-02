@@ -373,16 +373,45 @@ stage.on('pointerdown', (e) => {
                     draggable: true
                 });
 
-                textNode.on('mouseover tap', function (e) {
-                    if (selectedTool === 'selectiontool') {
-                        e.evt.stopPropagation();
+let pressTimer;
 
-                        selectedNode = e.target;
-                        transformer.nodes([e.target]);
-                        layer.draw();
-                        selectedShape = e.target;
-                    }
-                });
+textNode.on('mouseover', (e) => {
+  if (selectedTool !== 'selectiontool') return;
+
+  e.evt.stopPropagation();
+
+  clearTimeout(pressTimer); // Αν υπάρχει προηγούμενος timer, τον καθαρίζουμε
+
+  pressTimer = setTimeout(() => {
+    selectedNode = e.target;
+    transformer.nodes([e.target]);
+    layer.draw();
+    selectedShape = e.target;
+  }, 500); // 0.5 δευτερόλεπτα delay
+});
+
+textNode.on('mouseout', (e) => {
+  clearTimeout(pressTimer); // Αν φύγεις πριν τα 0.5 δευτ., ακυρώνουμε
+});
+
+textNode.on('touchstart', (e) => {
+  if (selectedTool !== 'selectiontool') return;
+
+  e.evt.preventDefault();
+
+  clearTimeout(pressTimer);
+
+  pressTimer = setTimeout(() => {
+    selectedNode = e.target;
+    transformer.nodes([e.target]);
+    layer.draw();
+    selectedShape = e.target;
+  }, 500);
+});
+
+textNode.on('touchend touchmove touchcancel', (e) => {
+  clearTimeout(pressTimer);
+});
 
 
 
@@ -881,16 +910,44 @@ const drawShape = () => {
     lastLayer.remove();
     lastLayer.destroy();
 
-    shape.on('mouseover', function (e) {
-        if (selectedTool === 'selectiontool') {
-            e.evt.stopPropagation();
-            selectedNode = e.target;
-            transformer.nodes([e.target]);
-            layer.draw();
+let pressTimer;
 
-            selectedShape = e.target;
-        }
-    });
+shape.on('mouseover', (e) => {
+    if (selectedTool !== 'selectiontool') return;
+
+    e.evt.stopPropagation();
+
+    clearTimeout(pressTimer);
+    pressTimer = setTimeout(() => {
+        selectedNode = e.target;
+        transformer.nodes([e.target]);
+        layer.draw();
+        selectedShape = e.target;
+    }, 500);
+});
+
+shape.on('mouseout', (e) => {
+    clearTimeout(pressTimer);
+});
+
+shape.on('touchstart', (e) => {
+    if (selectedTool !== 'selectiontool') return;
+
+    e.evt.preventDefault();
+
+    clearTimeout(pressTimer);
+    pressTimer = setTimeout(() => {
+        selectedNode = e.target;
+        transformer.nodes([e.target]);
+        layer.draw();
+        selectedShape = e.target;
+    }, 500);
+});
+
+shape.on('touchend touchmove touchcancel', (e) => {
+    clearTimeout(pressTimer);
+});
+
 
     layer_temp.add(shape);
     stage.add(layer_temp);

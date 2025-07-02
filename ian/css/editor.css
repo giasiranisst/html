@@ -66,14 +66,14 @@ body {
     }
 
     .b0 { background-color: #d6f4f5; color: black;padding-left: 0; padding-bottom: 0; border: none;}
-    .b1 { background-color: #8e44ad; }
-    .b2 { background-color: #3498db; }
-    .b3 { background-color: #27ae60; }
-    .b4 { background-color: #e67e22; }
-    .b5 { background-color: #d2527f; }
-    .b6 { background-color: #5dade2; }
-    .b7 { background-color: #58d68d; }
-    .b8 { background-color: #f5b041; }
+    .b1 { background-color: #6C3483; }
+    .b2 { background-color: #1B4F72; }
+    .b3 { background-color: #196F3D; }
+    .b4 { background-color: #A04000; }
+    .b5 { background-color: #922B5B; }
+    .b6 { background-color: #21618C; }
+    .b7 { background-color: #1E8449; }
+    .b8 { background-color: #9c640c; }
 
     span.quest {
       font-weight: bold;

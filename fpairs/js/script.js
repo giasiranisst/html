@@ -136,7 +136,6 @@ function getNextShuffledNumber(group) {
         return next;
     }
 }
-
 function loadRandomImages() {
     const img1 = document.getElementById('image1');
     const img2 = document.getElementById('image2');
@@ -147,19 +146,35 @@ function loadRandomImages() {
     img2.classList.add('hidden');
 
     const randomKey1 = getNextShuffledNumber(1);
+    const randomIndex2 = getNextShuffledNumber(2);
+
+    let imagesLoaded = 0;
+
+    function checkIfBothLoaded() {
+        imagesLoaded++;
+        if (imagesLoaded === 2) {
+            article.innerText = group1Images[randomKey1].article;
+            verb.innerText = group1Images[randomKey1].verb;
+        }
+    }
+
+    img1.onload = () => {
+        img1.classList.remove('hidden');
+        checkIfBothLoaded();
+    };
+
+    img2.onload = () => {
+        img2.classList.remove('hidden');
+        checkIfBothLoaded();
+    };
 
     img1.src = group1Images[randomKey1].image;
     img1.alt = randomKey1;
-    img1.classList.remove('hidden');
 
-    const randomIndex2 = getNextShuffledNumber(2);
     img2.src = group2Images[randomIndex2];
     img2.alt = group2Alts[randomIndex2];
-    img2.classList.remove('hidden');
-
-    article.innerText = group1Images[randomKey1].article;
-    verb.innerText = group1Images[randomKey1].verb;
 }
+
 
 
 window.onload = loadRandomImages;

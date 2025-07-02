@@ -167,9 +167,10 @@ footer a:hover {
 		font-size: 1.2em;
 	}
 
-	.main-container {
-		min-width: 300px;
-	}
+}
 
-
+@media (max-width: 320px) {
+  .main-container {
+    min-width: 300px;
+  }
 }

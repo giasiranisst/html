@@ -245,7 +245,8 @@ h4.title {
     }
 
     .word-display .letter.guessed {
-        margin: -35px 0 25px;
+        margin: -35px 0 40px;
+        font-size: 2rem;
     }
 
     .game-modal img {

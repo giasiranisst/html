@@ -146,7 +146,7 @@ footer a:hover {
 
     #ratio .container, 
 .sun-editor-editable {
-  padding-bottom: 0px; 
+  padding-bottom: -10px; 
 }
 }
 
@@ -182,3 +182,4 @@ footer a:hover {
 .se-char-counter, .sun-editor .se-wrapper .se-placeholder {
   color: black;
 }
+

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="el">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Φανταστικά ζευγάρια</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="ratio">
+        <div class="main-container">
+            <div class="container">
+                <h1>Φανταστικά ζευγάρια </h1>
+                <div class="txt">
+                    <p>Ανακάτεψε τις κάρτες, για να ταιριάξεις τυχαία κάθε ήρωα ή ηρωίδα με ένα αντικείμενο. </p>
+
+                    <p>Συμπλήρωσε όπως στο παράδειγμα: <span class="example">Ο</span>  <span class="exampleb">Σπάιντερμαν</span><span class="example"> έχει</span><span class="exampleb"> μια</span> <span class="example"> κιθάρα.</span></p>
+                    <p>Συζητάμε μαζί στην τάξη την ορθογραφία των λέξεων.</p>
+                </div>
+                <div class="image-container">
+                    <div class="image-group" id="group1">
+                        <img id="image1" src="" alt="">
+                    </div>
+                    <div class="image-group" id="group2">
+                        <img id="image2" src="" alt= "">
+                    </div>
+                </div>
+
+			  <div id="sentenceInput">
+				<label for="article" aria-label="Ο/Η"></label>
+				<p id="article"></p>
+				
+				<label for="first-input" aria-label="Δες την 1η εικόνα"></label>
+				<input tabindex="0"  id="first-input" type="text" placeholder="__________________" autofocus size="18">
+				
+				<label for="verb" aria-label="ρήμα"></label>
+				<p id="verb"></p>
+				
+
+				<select tabindex="0" id="article-select" aria-label="ένας/μια/ένα">
+					<option value="option">έναν</option>
+					<option value="option">μια</option>
+					<option value="option">ένα</option>
+				</select>
+				
+				<label for="second-input" aria-label="Δες την 2η εικόνα"></label>
+				<input tabindex="0" id="second-input" type="text" placeholder="_______________" autofocus size="15"><span>.</span>
+			</div>
+
+                <br>
+                <button tabindex="0" onclick="loadRandomImages()">Άλλο ζευγάρι...</button>
+            </div>
+            <footer>
+                <a href="credits.htm">[ i ]</a>
+            </footer>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -144,10 +144,6 @@ footer a:hover {
     padding: 8px 10px;
   }
 
-    #ratio .container, 
-.sun-editor-editable {
-  padding-bottom: -10px; 
-}
 }
 
 /* === Desktop (≥768px) === */
@@ -182,4 +178,5 @@ footer a:hover {
 .se-char-counter, .sun-editor .se-wrapper .se-placeholder {
   color: black;
 }
+
 

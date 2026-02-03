@@ -1,5 +1,6 @@
 html, body {
   overflow: hidden;
+	background-color: red;
 }
 
 .wrapper {
@@ -153,9 +154,10 @@ input[type="text"]:disabled {
 @media (max-height: 600px) and (orientation: landscape) {
 
   #ratio {
-    transform: scale(calc(90vh / (90vw * 9 / 16)));
+    transform: scale(0.60);
     transform-origin: top center;
   }
 
 }
+
 

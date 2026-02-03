@@ -82,6 +82,30 @@ background-color:red;
 #in10 { top: 8%; left: 20%; transform: translate(-50%, -50%); }
 #in11 { top: 48%; left: 60%; transform: translate(-50%, -50%); }
 
+@media (min-width: 769px) {
+  body {
+        overflow: hidden;
+  }
+  .image-container {
+    height: 67vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    margin: 0 auto;
+  }
+
+  #ratio {
+    width: 100%;
+  }
+
+  .image-container img {
+  max-height: 100%;
+  width: auto;
+}
+}
+
 /* Mobile CSS */
 @media (max-width: 768px) {
   body {
@@ -143,4 +167,3 @@ input[type="text"]:disabled {
   background: tomato;
   color: white;
 }
-

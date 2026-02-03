@@ -1,7 +1,7 @@
 .wrapper {
   position: relative;
    width: 100%;
-
+background-color:red;
 }
 
 #ratio {
@@ -143,3 +143,4 @@ input[type="text"]:disabled {
   background: tomato;
   color: white;
 }
+

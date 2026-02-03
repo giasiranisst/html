@@ -133,6 +133,11 @@ body {
 
 /* Small screens adjustments */
 @media (max-width: 768px) {
+  .wrapper {
+    transform: scale(0.90);
+    transform-origin: top center;
+    overflow: hidden;
+  }
   .excercise {
     padding: 15px;
   }
@@ -150,7 +155,7 @@ body {
 @media (max-width: 480px) {
 
   .wrapper {
-    transform: scale(0.90);
+    transform: scale(0.85);
     transform-origin: top center;
     overflow: hidden;
   }
@@ -210,4 +215,5 @@ footer a {
 
 footer a:hover {
   text-decoration: underline;
+
 }

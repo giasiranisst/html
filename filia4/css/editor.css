@@ -24,7 +24,7 @@ body {
    EXCERCISE (Κίτρινο)
    ======================= */
 .excercise {
-  background-color: red;
+  background-color: yellow;
   padding: 20px;
   border-radius: 8px 8px 0 0;
   color: blue;
@@ -155,7 +155,7 @@ body {
 @media (max-width: 480px) {
 
   .wrapper {
-    transform: scale(0.85);
+    transform: scale(0.84);
     transform-origin: top center;
     overflow: hidden;
   }
@@ -217,4 +217,5 @@ footer a:hover {
   text-decoration: underline;
 
 }
+
 
